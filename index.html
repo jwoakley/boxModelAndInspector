@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+			<link rel="stylesheet" href="css/style.css">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+	    <title>Box Model Lecture</title>
+	</head>
+	<body>
+		<header>
+			<h1>CSS Box Model</h1>
+		</header>
+		<hr>
+		<section id="sectionOne">
+			<h3>interactive model</h3>
+			<div id="cssBody">body
+				<div id="cssHeader">header
+					<div id="cssNav">navigation</div></div>
+					<div id="cssSec">main content
+						<div id="cssArt">article</div>
+							<div id="cssArtO">article</div>
+					</div>
+					<div id="cssFoot">footer</div>
+			</div>
+			<ol>
+				<li>remember when we talked about each element being a box, and how each element nests inside a larger box?</li>
+				<li>hover over each element to visualize this</li>
+				<li>each element, and therefore box, can be adjusted by three properties in CSS</li>
+				<li><em class="redEm">padding</em>, <em class="redEm">border</em> & <em class="redEm">margin</em> in addition to the content itself</li>
+				<li>starting from the content and working outwards</li>
+			</ol>
+		</section>
+		<br>
+		<hr>
+		<br>
+		<section id="sectionTwo">
+			<h3>content</h3>
+			<h4>inside out: <em>content</em></h4>
+	
+			<p class="secTwo">Aqua is equal to the content. Hover to watch the content become aqua.
+			</p>
+			<p class="secTwo">Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.Aqua is equal to the content. Hover to watch the content become aqua.
+			</p>
+			<ol>
+				<li>The amount of content will determine the size of the box</li>
+				<li>this is controlled by html - and obviously, the amount of content present</li>
+				<li>these are two examples showing the content filling the box.</li>
+				<li>hover over them and you can see the content fills the space.</li>
+			</ol>
+		</section>
+		<br>
+		<hr>
+		<br>
+		<section id="sectionThree">
+			<h3>padding</h3>
+			<h4>inside out: <em>content > padding</em></h4>
+
+			<div id="padSecThr">
+			<p id="secThree">Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.Aqua is equal to the content. Hover to watch the padding become salmon.
+			</p>
+		</div>
+		<ol>
+			<li>we now know the content is contained by the aqua color</li>
+			<li>hover to check out the padding</li>
+			<li>shown in salmon, the padding is the space between the content and the border</li>
+			<li>right now the border is set to the default, which is not visible.</li>
+			<li>let's take a look at the syntax:</li>
+			<br>
+		
+
+<div class="codeColumns">
+<div class="codeComplete">		
+<p class="codeEx">longhand: four properties</p>
+<pre class="longHand">
+<code>#boxModel {
+	padding-top: 100px;
+	padding-right: 75px;
+	padding-bottom: 50px;
+	padding-left: 25px;
+	}</code>
+</pre>
+</div>
+
+<div class="codeComplete">	
+<p class="codeEx">shorthand: four properties</p>
+<pre class="longHand">
+<code>#boxModel {
+	padding: 100px 75px 50px 25px;
+	}</code>
+</pre>
+</div>
+
+
+<div class="codeComplete">	
+<p class="codeEx">single property:</p>
+<pre id="single">
+<code>#boxModel {
+	padding-top: 100px;
+	}</code>
+</pre>
+</div>
+
+<div class="codeComplete">	
+<p class="codeEx">four sides equally padded:</p>
+<pre id="allEqual">
+<code>#boxModel {
+	padding: 100px;
+	}</code>
+</pre>
+</div>
+
+
+<div class="codeComplete">	
+<p class="codeEx">two sides with equal padding:</p>
+<pre id="twoEqual">
+<code>#boxModel {
+	padding: 100px 15px;
+	}</code>
+</pre>
+</div>
+</div>	
+
+<li>something to note here, in the shorthand there are <em><strong>NO commas.</strong></em></li>
+<li>shorthand goes in clockwise order: <em><strong>TOP, RIGHT, BOTTOM, LEFT</strong></em> </li>
+</ol>
+</section>
+<hr>
+<section id="sectionFour">
+			<h3>borders</h3>
+			<h4>inside out: <em>content > padding > border</em></h4>
+			<ol>
+				<li>every box has a border
+					even if it is not visible
+					</li>
+					<li>the default border is none</li>
+					<li>the border exists after the content and padding</li>
+					<li>let’s take a closer look:</li>
+		
+
+			<div id="bordSec">
+			<p id="secFour">Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.Aqua is equal to the content and the padding is Salmon, hover to show the Black border.</p>
+		</div>
+	<li>the border property has three values that must be called: <em class="redEm">width, style & color.</em></li>
+
+	<br>
+
+<div class="codeColumns">
+<div class="codeComplete">		
+<pre id="trifecta">
+<code>#boxModel {
+	padding: 25px;
+	border: 6px solid black;
+	}</code>
+</pre>
+<pre id="fourBorders">
+<code>#boxModel {
+	padding: 25px;
+	border-top: 12px solid #ff00ff;
+	border-right: 12px dashed #0000ff;
+  	border-bottom: 12px double #006400;
+  	border-left: 12px groove #800080;
+	}</code>
+	</pre>
+			</div>
+			</div>
+			<li> you can call out indiviudual sides for nuanced control</li>
+			<li> for more information on list styling <a href="https://www.w3schools.com/css/css_border.asp" target="_blank">click here.</a></li>
+		</ol>	
+</section>
+<hr>
+<section id="sectionFive">
+	<h3>margins</h3>
+	<h4>inside out: <em>content > padding > border > margin </em></h4>
+
+	<ol>
+		<li>margins exist on the outside or the exterior of an element's border.</li>
+		<li> in other words: <em>margins are the spaces between elements</em></li>
+	</ol>
+	<br>
+
+	<div id="marginExamp">
+		<div id="paddEXL">
+		<div class="contentEX">Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.</div>
+
+	</div>
+	
+		<div id="paddEXR">
+		<div class="contentEX">Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.Aqua is equal to the content, the padding is Salmon, borders are black. Margins become grey on hover.</div></div>
+	</div>
+
+<div id="codeColumns">
+	<div class="codeComplete">
+	<br>		
+	<p class="codeEx">left side example:</p>
+	<pre id="marg">
+<code id="leftMarg">#boxModel {
+	padding: 2%;
+	border: 3px solid black;
+	margin-left: 100px;
+	}</code>
+</pre>
+</div>
+
+	<div class="codeComplete">
+	<br>		
+	<p class="codeEx">right side example:</p>
+	<pre id="Rmarg">
+<code id="rightMarg">#boxModel {
+	padding: 2%;
+	border: 3px solid black;
+	margin-left: 100px;
+	margin-right: 100px;
+	}</code>
+</pre>
+</div>
+<div id="fourSquare">
+<div id="aquaSquare">
+four equal properties:
+<pre>
+<code>
+margin: 30px;
+</code>
+</pre>
+30 pixels in all <br>four directions
+</div>
+<div id="salmonSquare">
+left & bottom properties:
+<pre>
+<code>
+margin-left: 30px;
+margin-bottom: 90px;
+</code>
+</pre>
+moves left 30px;<br>
+pushes down 30 pixels<br>
+on bottom of element
+</div>
+
+<div id="blackSquare">
+top & right properties:
+<pre>
+<code>
+margin-top: 45px;
+margin-right: 77px;
+</code>
+</pre>
+puts 45 pixels on top;<br>
+pushes right element 77px;
+</div>
+<div id="greySquare">
+one property:
+<pre>
+<code>
+margin-top: 145px;
+</code>
+</pre>
+adds 145 px to the top
+</div>
+</div>
+<br>
+<br>
+</section>
+<ol id="btmMar">
+	<li> check out this interactive box model on <a href=https://codepen.io/carolineartz/full/ogVXZj/ target="_blank">codepen.io</a></li>
+	</ol>	
+<hr>
+<br>
+<br>
+<section id="sectionSix">
+	<h3>inline elements vs. block elements</h3>
+		<h4>what's the difference?</h4>
+
+	<div id="secSixParent">
+		<div id="block">
+			<h5>block-level elements</h5>
+			<h6>will always start on a new line, stacking one on top of the next</h6>
+			<p class="example">examples:</p>
+			<ul class="noStyle">
+				<li>&lt;h1 thru h6&gt;</li>
+				<li>&lt;p&gt;</li>
+				<li>&lt;ol&gt;</li>
+				<li>&lt;ul&gt;</li>
+				<li>&lt;li&gt;</li>
+				<li>&lt;article&gt;</li>
+				<li>&lt;div&gt;</li>
+				<li>&lt;footer&gt;</li>
+				<li>&lt;nav&gt;</li>
+				<li>&lt;section&gt;</li>
+			</ul>
+		</div>
+		<div id="inLine">
+			<h5>inline elements</h5>
+			<h6>will always appear to continue on the same line as their neighboring elements</h6>
+			<p class="example">examples:</p>
+			<ul id="inlineList">
+				<li>&lt;a&gt;</li>
+				<li>&lt;br&gt;</li>
+				<li>&lt;code&gt;</li>
+				<li>&lt;em&gt;</li>
+				<li>&lt;img&gt;</li>
+				<li>&lt;span&gt;</li>
+				<li>&lt;strong&gt;</li>
+			</ul>
+		</div>
+	</div>
+	<ul>
+		<li>the behavior is different for inline and block elements:</li>
+</ul>
+	<table>
+		<tr>
+			<th>type</th>
+			<th>width & height</th>
+			<th>padding & margins</th>
+		</tr>
+		<tr>
+			<td>block-level</td>
+			<td>yes</td>
+			<td>can apply to all four sides</td>
+		</tr>
+		<tr>
+			<td>inline</td>
+			<td>depends</td>
+			<td>will only affect the sides</td>
+		</tr>
+	</table>
+	<ul>
+<li> what does this mean though?</li>
+<li>hover on each of the images below, then take a look at the code samples</li>
+</ul>
+
+<div class="inlineExamples">
+	<img class="imOne" src="img/one.png">
+	<img class="imTwo" src="img/two.png">
+	<img class="imThr" src="img/three.png">
+</div>
+<div id="inlineExamples">
+<pre id="leftImage">
+<code>
+#leftImage { 
+
+ margin-left: 5%;
+ margin-right: 5%;
+
+}
+</code>
+</pre>
+<pre id="centerImage">
+	<code>
+#centerImage { 
+
+ margin-top: 5%;
+
+}
+	</code>
+	</pre>
+<pre id="centerImage">
+<code>
+#centerImage { 
+
+ margin-top: 10%;
+ margin-left: 5%;
+ padding-bottom: 16%;
+
+}
+	</code>
+	</pre>
+</div>
+
+<ul>
+	<li>block level elements move regardless of what is around them.</li>
+	<li>inline elements can push their neighbors to the left or the right.</li>
+	<li>a single top or bottom property will affect all inline elements equally</li>
+	<li>but something strange happens when you push along the X and Y axis</li>
+</ul>
+<br>
+</section>
+<hr>
+<section id="sectionSeven">
+<h3>can we change this default behavior?</h3>
+	<h4><em>i thought you would never ask...</em></h4>
+
+<p class="secSev">display:inline;</p>
+<ul>
+	<li>makes block-level elements act like they are inline. look at the &lt;p&gt; elements below</li>
+</ul>
+
+<div class="displayInline">
+	<p class="dispIn"> fruit loops</p>
+	<p class="dispIn"> cap'n crunch</p>
+	<p class="dispIn"> lucky charm's</p>
+	<p class="dispIn"> cocoa pebbles</p>
+</div>
+
+
+<pre>
+<code>
+p {
+	display: inline;
+}
+</code>
+</pre>
+<ul>
+	<li>with display: inline, you will still get strange behavior with margins and padding, like we saw with the images above</li>
+	<li>you can't change the height, width or margin of the element.</li>
+	<li>see the code below and look at the example:</li>
+</ul>
+<div class="displayInline">
+<p class="dispInline"> fruit loops</p>
+<p class="dispInline" id="capcrunch"> cap'n crunch</p>
+<p class="dispInline"> lucky charm's</p>
+<p class="dispInline" id="cocoa"> cocoa pebbles</p>
+</div>
+<pre>
+<code>
+#capcrunch {
+	background-color: #ff00ff;
+	margin-top: 100px;
+	height: 100px;
+	width: 100px;
+}
+</code>
+</pre>
+<h3>can we change this default behavior?</h3>
+	<h4><em>i thought you would never ask...</em></h4>
+	<p class="secSev">display:inline-block;</p>
+	<ul>
+		<li>makes block-level elements act like they are inline. and respects height, width and margins. basically a full transformation from inline to block, but the elements sit side-by-side: look at the &lt;p&gt; elements below</li>
+	</ul>
+	
+	<div class="displayInline">
+		<p class="dispIn"> satsuma</p>
+		<p class="dispIn"> pummelo</p>
+		<p class="dispIn"> clementine</p>
+		<p class="dispIn"> naval</p>
+	</div>
+	
+	
+	<pre>
+	<code>
+	p {
+		display: inline-block;
+	}
+	</code>
+	</pre>
+	<ul>
+		<li>with display: inline-block; we have the freedom to adjust properties we could not before.</li>
+		<!-- <li>you can't change the height, width or margin of the element.</li> -->
+		<li>look at the example and compare the behavior with that of the images</li>
+	</ul>
+	<div class="displayInlineBlock">
+	<p id="satsuma">satsuma</p>
+	<p id="pummelo">pummelo</p>
+	<p id="meyer">meyer</p>
+	<p id="kaffir">kaffir</p>
+	</div>
+
+	<div class="inlineExamples">
+		<img class="imOne" src="img/one.png">
+		<img class="imTwo" src="img/two.png">
+		<img class="imThr" src="img/three.png">
+	</div>
+
+	<h3>what about going from inline to block?</h3>
+	<h4><em>i thought you would never ask...</em></h4>
+	<p class="secSev">display:block;</p>
+	<ul>
+		<li>makes inline elements act like they are block elements, stacking on top of each other. all dimesnions are controlable</li>
+	</ul>
+
+	<div class="blockElements">
+		<a href="">link</a>
+		<a href="">link</a>
+		<a href="">link</a>
+		<a href="">link</a>
+		<a href="">link</a>
+		<a href="">link</a>
+	</div>
+
+	<pre>
+	<code>
+	a {
+		display: block;
+	}
+	</code>
+	</pre>
+
+	<div id="blockElements">
+		<a class="bE" href="">link</a>
+		<a class="bE" href="">link</a>
+		<a class="bE" href="">link</a>
+		<a class="bE" href="">link</a>
+		<a class="bE" href="">link</a>
+		<a class="bE" href="">link</a>
+	</div>
+
+	<h3>last but not least....</h3>
+	<h4><em>i thought we would never get here...</em></h4>
+	<p class="secSev">display:none;</p>
+	<ul>
+		<li>with this, we can make elements simply disappear</li>
+	</ul>
+	<pre id="displayNone">
+	<code>
+	a {
+		display: none;
+	}
+	</code>
+	</pre>
+</section>
+<hr>
+	<section id="sectionEight">
+
+		<h3>inspecting code</h3>
+		<h4><em>can we check code from a webpage?</em></h4>
+
+		<ol>
+			<li>this demo is for chrome, other browsers have similiar tools - but chrome is the most user friendly</li>
+			<li>navigate to the developer tools
+			</li>
+			<li>elements, click on each one to get all details and styles</li>
+			<li>you can "adjust" your styles here </li>
+		</ol>
+</section>
+<hr>
+<footer>
+	<nav>
+		<a href="#sectionOne">1</a>
+		<a href="#sectionTwo">2</a>
+		<a href="#sectionThree">3</a>
+		<a href="#sectionFour">4</a>
+		<a href="#sectionFive">5</a>
+		<a href="#sectionSix">6</a>
+		<a href="#sectionSeven">7</a>
+		<a href="#sectionEight">8</a>
+	</nav>
+</footer>	
+</body>
+</html>
+
+
+
+
+
